@@ -1,7 +1,12 @@
+# Author: Omkar Dixit
+# Email: ond170030@utdallas.edu
+
 import time
 import sys
 from random import shuffle
 
+# Time Complexity: O(n^2)
+# Space Complexity O(logn)
 def quickSort(arr, l, r):
     if l < r:
         pivot = partition(arr, l, r)

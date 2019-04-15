@@ -1,8 +1,11 @@
+# Author: Omkar Dixit
+# Email: ond170030@utdallas.edu
+
 import time
 import random
 import sys
 
-# Time Complexity O(n * log n)
+# Time Complexity O(nlogn)
 # Space Complexity O(n)
 def mergeSort1(arr, l, r):
     if l < r:
