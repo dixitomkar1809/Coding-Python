@@ -1,7 +1,7 @@
 # Author: Omkar Dixit
 # Email: ond170030@utdallas.edu
 
-# Remove Duplicates
+# Delete Middle
 
 import sys
 
@@ -10,17 +10,11 @@ class Node:
         self.val = val
         self.next = None
     
-def removeDups(head):
-    mySet = set()
-    curr = head
-    prev = Node(None)
-    while curr:
-        if curr.val in mySet:
-            prev.next = curr.next
-        else:
-            prev = curr
-            mySet.add(curr.val)
-        curr = curr.next
+def deleteMiddle(head):
+    temp = head.next
+    head.val = temp.val
+    head.next = temp.next
+    temp = None
     return head
 
 if __name__=="__main__":
@@ -36,7 +30,7 @@ if __name__=="__main__":
                 node = Node(i)
                 curr.next = node
                 curr = node
-            head = removeDups(head)
+            head = deleteMiddle(head.next)
             while(head):
                 print(head.val, end=" ")
                 head = head.next
