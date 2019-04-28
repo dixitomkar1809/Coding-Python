@@ -1,7 +1,9 @@
 # Author: Omkar Dixit
 # Email: ond170030@utdallas.edu
 
-# Nth from last
+'''
+Return Kth to Last: Implement an algorithm to find the kth to last element of a singly linked list.
+'''
 
 import sys
 

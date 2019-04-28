@@ -1,7 +1,9 @@
 # Author: Omkar Dixit
 # Email: ond170030@utdallas.edu
 
-# Palindrome
+'''
+Palindrome: Implement a function to check if a linked list is a palindrome.
+'''
 
 import sys
 

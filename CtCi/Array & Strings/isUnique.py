@@ -1,7 +1,10 @@
 # Author: Omkar Dixit
 # Email: ond170030@utdallas.edu
 
-# python isUnique.py string
+'''
+Is Unique: Implement an algorithm to determine if a string has all unique characters. What if you
+cannot use additional data structures?
+'''
 
 from collections import Counter
 import sys

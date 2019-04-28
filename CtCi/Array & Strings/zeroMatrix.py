@@ -1,7 +1,10 @@
 # Author: Omkar Dixit
 # Email: ond170030@utdallas.edu
 
-# Zero Matrix
+'''
+Zero Matrix: Write an algorithm such that if an element in an MxN matrix is 0, its entire row and
+column are set to 0.
+'''
 
 # Time Complexity - O(n*m)
 def zeroMatrix(matrix):

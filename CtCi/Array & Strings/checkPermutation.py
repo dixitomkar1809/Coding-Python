@@ -1,7 +1,10 @@
 # Author: Omkar Dixit
 # Email: ond170030@utdallas.edu
 
-# python checkPermutation.py string1 string2
+'''
+Check Permutation: Given two strings, write a method to decide if one is a permutation of the
+other.
+'''
 
 from collections import Counter
 import sys

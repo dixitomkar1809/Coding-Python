@@ -1,7 +1,11 @@
 # Author: Omkar Dixit
 # Email: ond170030@utdallas.edu
 
-# Remove Duplicates
+'''
+R􀂧mov􀂧 Dups! Write code to remove duplicates from an unsorted linked list.
+FOLLOW UP
+How would you solve this problem if a temporary buffer is not allowed?
+'''
 
 import sys
 

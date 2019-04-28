@@ -1,7 +1,10 @@
 # Author: Omkar Dixit
 # Email: ond170030@utdallas.edu
 
-# python URLify.py Mr John Smith
+'''
+Is Unique: Implement an algorithm to determine if a string has all unique characters. What if you
+cannot use additional data structures?
+'''
 
 import sys
 
