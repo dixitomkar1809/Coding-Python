@@ -34,6 +34,7 @@ def loopDetection(head):
     if slow != fast:
         return None
     slow = head
+    
     while slow!=fast:
         fast = fast.next
         slow = slow.next
