@@ -24,7 +24,6 @@ class CallHandler:
     def registerHandler(self, handler):
         self.handlers[handler.getType()].append(handler)
 
-    
     # Returns all handlers
     def getAllHandlers(self):
         return self.handlers
