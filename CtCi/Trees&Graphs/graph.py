@@ -77,4 +77,22 @@ class Graph:
                     queue.append(v)
                     visited[v] = True
         return stack
-        
+    
+    def checkRoute(self, source, destination):
+        if len(self.getEdges())==0:
+            return "Empty Graph"
+        visited = []
+        if source not in self.edges or destination not in self.edges:
+            return "Not in the Graph"
+        queue = []
+        queue.append(source)
+        visited.append(source)
+        while queue:
+            s = queue.pop(0)
+            for v in self.getToVertices(s):
+                if v not in visited:
+                    queue.append(v)
+                    visited.append(v)
+                    if v==destination:
+                        return True
+        return False

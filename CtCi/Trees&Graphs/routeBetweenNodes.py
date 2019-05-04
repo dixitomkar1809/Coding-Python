@@ -16,6 +16,7 @@ if __name__=="__main__":
     D = g.addVertex("D")
     E = g.addVertex("E")
     F = g.addVertex("F")
+    G = g.addVertex("G")
     g.addEdge(A, B)
     g.addEdge(A, C)
     g.addEdge(B, D)
@@ -24,4 +25,4 @@ if __name__=="__main__":
     g.addEdge(D, E)
     g.addEdge(D, F)
     g.addEdge(E, F)
-    print(g.checkRoute(A, F))
+    print(g.checkRoute(A, G))
