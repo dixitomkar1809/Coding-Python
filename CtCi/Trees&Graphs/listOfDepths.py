@@ -5,15 +5,38 @@
 List of Depths: Given a binary tree, design an algorithm which creates a linked list of all the nodes
 at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).
 '''
-class BinaryTreeNode:
-    def __init__(self, value):
-        self.val = value
-        self.left = None
-        self.right = None
+from Node import TreeNode, preOrderTraversal, postOrderTraversal, inOrderTraversal
+from collections import defaultdict
 
+# Simple level order traversal
+def listOfDepths(root):
+    cnt = 1
+    queue = []
+    queue.append([root, cnt])
+    sol = defaultdict(list)
+    while queue:
+        node, level = queue.pop(0)
+        sol[level].append(node.value)
+        if node.left:
+            queue.append([node.left, level+1])
+        if node.right:
+            queue.append([node.right, level+1])
+    return (sol)
 
-def listOfDepths(self):
-    pass
 
 if __name__=="__main__":
-    
+    one = TreeNode(1)
+    two = TreeNode(2)
+    three = TreeNode(3)
+    four = TreeNode(4)
+    five = TreeNode(5)
+    six = TreeNode(6)
+    seven = TreeNode(7)
+    eight = TreeNode(8)
+    one.left = two
+    one.right = three
+    two.left = four
+    two.right = five 
+    three.left = six
+    three.right = seven
+    print(listOfDepths(one))
