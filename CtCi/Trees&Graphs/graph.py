@@ -14,7 +14,8 @@ class Vertex:
         return self.name
 
 class Graph:
-    def __init__(self):
+    def __init__(self, directed):
+        self.directed = directed
         # List of Edges Source(vertex) to Destination(Vertex)
         self.edges = {}
 
@@ -22,14 +23,22 @@ class Graph:
         return self.edges[source]
     
     def addEdge(self, fromVertex, toVertex):
-        if fromVertex not in self.edges or toVertex not in self.edges:
-            return False
-        self.edges[fromVertex].append(toVertex)
-        self.edges[toVertex].append(fromVertex)
-        return  True
+        if self.directed:
+            if fromVertex not in self.edges or toVertex not in self.edges:
+                return False
+            self.edges[fromVertex].append(toVertex)
+            self.edges[toVertex].append(fromVertex)
+            return  True
+        else:
+            if fromVertex not in self.edges or toVertex not in self.edges:
+                return False
+            self.edges[fromVertex].append(toVertex)
     
     def getEdges(self):
         return self.edges
+
+    def getVertices(self):
+        return [vertex for vertex in self.edges]
 
     def addVertex(self, value):
         vertex = Vertex(value)
@@ -96,3 +105,21 @@ class Graph:
                     if v==destination:
                         return True
         return False
+        
+    def topologicalSort(self):
+        visited={} 
+        stack = []
+        for vertex in self.getVertices():
+            visited[vertex] = False
+        for u in self.getVertices():
+            if not visited[u]:
+                self.__topologicalSortUtil(visited, u, stack)
+        return stack
+
+
+    def __topologicalSortUtil(self, visited, u, stack):
+        visited[u] = True
+        for v in self.edges[u]:
+            if not visited[v]:
+                self.__topologicalSortUtil(visited, v, stack)
+        stack.insert(0, self.getVertexName(u))
