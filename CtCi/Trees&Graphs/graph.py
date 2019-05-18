@@ -23,7 +23,7 @@ class Graph:
         return self.edges[source]
     
     def addEdge(self, fromVertex, toVertex):
-        if self.directed:
+        if not self.directed:
             if fromVertex not in self.edges or toVertex not in self.edges:
                 return False
             self.edges[fromVertex].append(toVertex)

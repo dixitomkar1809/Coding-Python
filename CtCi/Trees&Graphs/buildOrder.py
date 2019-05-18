@@ -29,3 +29,4 @@ if __name__=="__main__":
     g.addEdge(F, A)
     g.addEdge(D, C)
     print(g.topologicalSort())
+    
