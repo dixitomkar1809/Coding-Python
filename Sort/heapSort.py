@@ -1,5 +1,6 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
+# Source: GFG
 
 def heapify(arr, i, size):
     largest = i
@@ -17,9 +18,9 @@ def heapSort(arr):
     n = len(arr)
     for i in range(n, -1, -1):
         heapify(arr, i, n)
-    for i in range(n-1, 0, -1):
-        arr[i], arr[0] = arr[0], arr[i]
-        heapify(arr, 0, i)
+    # for i in range(n-1, 0, -1):
+    #     arr[i], arr[0] = arr[0], arr[i]
+    #     heapify(arr, 0, i)
 
 if __name__=="__main__":
     arr = [12, 11, 13, 5, 6, 7]
