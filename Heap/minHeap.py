@@ -1,5 +1,3 @@
-# Author: Omkar Dixit
-# Email: omedxt@gmail.com
 
 class MaxHeap:
     def __init__(self, capacity):
@@ -31,7 +29,7 @@ class MaxHeap:
 
     def percolateUp(self, i):
         x = self.pq[i]
-        while i > 0 and x > self.pq[self.__getParent(i)]:
+        while i > 0 and x < self.pq[self.__getParent(i)]:
             self.pq[i] = self.pq[self.__getParent(i)]
             i = self.__getParent(i)
         self.pq[i] = x
@@ -40,9 +38,9 @@ class MaxHeap:
         x = self.pq[i]
         c = self.__getFirstChild(i)
         while c <= self.size - 1:
-            if self.pq[c] <= self.pq[c + 1]:
+            if self.pq[c] >= self.pq[c + 1]:
                 c = c + 1
-            if x > self.pq[c]: break
+            if x <= self.pq[c]: break
             self.pq[i] = self.pq[c]
             i = c
             c = self.__getFirstChild(i)
@@ -50,6 +48,11 @@ class MaxHeap:
 
     def peek(self, i):
         return self.pq[0]
+
+    def printHeap(self):
+        for i in range(self.size):
+            print(self.pq[i])
+
 
 if __name__=="__main__":
     heap = MaxHeap(5)
@@ -59,11 +62,7 @@ if __name__=="__main__":
     heap.size = len(array)
     for i in range(len(array)-1, -1, -1):
         heap.percolateDown(i)
-    print(heap.pq)
+    print(heap.printHeap())
     heap.add(15)
-    print(heap.pq)
-    print(heap.size)
-    print(heap.remove())
-    print(heap.pq)
-
+    # print(heap.printHeap())
 
