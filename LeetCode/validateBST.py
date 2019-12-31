@@ -1,7 +1,7 @@
 # Author: Omkar Dixit
 # Email: omedxt@gmail.com
 
-# Link to the problem: https://leetcode.com/problems/validate-binary-search-tree/
+# Link to the problem: https://leetcode.com/problems/validate-binary-search-tree/   
 
 # Definition for a binary tree node.
 # class TreeNode:
