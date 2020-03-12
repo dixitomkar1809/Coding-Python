@@ -1,9 +1,10 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 '''
 List of Depths: Given a binary tree, design an algorithm which creates a linked list of all the nodes
 at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).
+Time Complexity: O(n)
 '''
 from Node import TreeNode, preOrderTraversal, postOrderTraversal, inOrderTraversal
 from collections import defaultdict

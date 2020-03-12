@@ -1,17 +1,19 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 # Graph 
 
 from collections import defaultdict
 
+
 class Vertex:
     def __init__(self, value):
         self.name = value
         self.color = "white"
-    
+
     def getName(self):
         return self.name
+
 
 class Graph:
     def __init__(self, directed):
@@ -21,19 +23,19 @@ class Graph:
 
     def getToVertices(self, source):
         return self.edges[source]
-    
+
     def addEdge(self, fromVertex, toVertex):
         if not self.directed:
             if fromVertex not in self.edges or toVertex not in self.edges:
                 return False
             self.edges[fromVertex].append(toVertex)
             self.edges[toVertex].append(fromVertex)
-            return  True
+            return True
         else:
             if fromVertex not in self.edges or toVertex not in self.edges:
                 return False
             self.edges[fromVertex].append(toVertex)
-    
+
     def getEdges(self):
         return self.edges
 
@@ -44,12 +46,12 @@ class Graph:
         vertex = Vertex(value)
         self.edges[vertex] = []
         return vertex
-    
+
     def getVertexName(self, vertex):
         return vertex.getName()
-    
+
     def depthFirstSearch(self):
-        if len(self.getEdges())==0:
+        if len(self.getEdges()) == 0:
             return "Empty Graph"
         visited = {}
         stack = []
@@ -66,10 +68,10 @@ class Graph:
         for v in self.getToVertices(vertex):
             if not visited[v]:
                 self.__dfsVisit(visited, v, stack)
-        return 
+        return
 
     def breadthFirstSearch(self):
-        if len(self.getEdges())==0:
+        if len(self.getEdges()) == 0:
             return "Empty Graph"
         visited = {}
         for vertex in self.getEdges():
@@ -86,15 +88,14 @@ class Graph:
                     queue.append(v)
                     visited[v] = True
         return stack
-    
+
     def checkRoute(self, source, destination):
-        if len(self.getEdges())==0:
+        if len(self.getEdges()) == 0:
             return "Empty Graph"
         visited = []
         if source not in self.edges or destination not in self.edges:
             return "Not in the Graph"
-        queue = []
-        queue.append(source)
+        queue = [source]
         visited.append(source)
         while queue:
             s = queue.pop(0)
@@ -102,12 +103,12 @@ class Graph:
                 if v not in visited:
                     queue.append(v)
                     visited.append(v)
-                    if v==destination:
+                    if v == destination:
                         return True
         return False
-        
+
     def topologicalSort(self):
-        visited={} 
+        visited = {}
         stack = []
         for vertex in self.getVertices():
             visited[vertex] = False
@@ -115,7 +116,6 @@ class Graph:
             if not visited[u]:
                 self.__topologicalSortUtil(visited, u, stack)
         return stack
-
 
     def __topologicalSortUtil(self, visited, u, stack):
         visited[u] = True
