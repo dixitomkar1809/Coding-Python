@@ -1,5 +1,5 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 '''
 Delete Middle Node: Implement an algorithm to delete a node in the middle (i.e., any node but
@@ -17,27 +17,31 @@ class Node:
         self.val = val
         self.next = None
     
-def deleteMiddle(head):
-    temp = head.next
-    head.val = temp.val
-    head.next = temp.next
-    temp = None
-    return head
+def deleteMiddle(head, node):
+    if (not node or not node.next):
+        return False
+    nextNode = node.next
+    node.val = nextNode.val
+    node.next = nextNode.next
 
 if __name__=="__main__":
-    if len(sys.argv)==1:
-        print("List not detected")
-    else:
-        head = Node(sys.argv[1])
-        if len(sys.argv)==2:
-            print(head.val)
-        else:
-            curr = head
-            for i in sys.argv[2:]:
-                node = Node(i)
-                curr.next = node
-                curr = node
-            head = deleteMiddle(head.next)
-            while(head):
-                print(head.val, end=" ")
-                head = head.next
+    one = Node(1)
+    two = Node(2)
+    three = Node(3)
+    four = Node(4)
+    five = Node(5)
+    six = Node(6)
+    seven = Node(7)
+    eight = Node(8)
+    one.next=two
+    two.next=three
+    three.next=four
+    four.next=five
+    five.next=six
+    six.next=seven
+    seven.next=eight
+    deleteMiddle(one, four)
+    head = one
+    while head:
+        print(head.val)
+        head = head.next
