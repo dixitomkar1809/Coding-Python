@@ -1,5 +1,5 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 '''
 Minimal Tree: Given a sorted (increasing order) array with unique integer elements, write an algorithm
