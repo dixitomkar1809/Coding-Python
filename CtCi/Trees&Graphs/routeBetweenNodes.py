@@ -1,5 +1,5 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 '''
 Route Between Nodes: Given a directed graph, design an algorithm to find out whether there is a
@@ -9,7 +9,7 @@ route between two nodes.
 from graph import *
 
 if __name__=="__main__":
-    g = Graph()
+    g = Graph(True)
     A = g.addVertex("A")
     B = g.addVertex("B")
     C = g.addVertex("C")
@@ -25,4 +25,4 @@ if __name__=="__main__":
     g.addEdge(D, E)
     g.addEdge(D, F)
     g.addEdge(E, F)
-    print(g.checkRoute(A, G))
+    print(g.checkRoute(E, A))
