@@ -1,5 +1,5 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 '''
 String Rotation:Assumeyou have a method isSubstringwhich checks if one word is a substring
@@ -16,7 +16,7 @@ def isSubstring(s1, s2):
             if s2[i+j]!=s1[j]:
                 break
             if j+1==len(s1):
-                print(j+1)
+                # print(j+1)
                 return True
     return False
 
@@ -30,10 +30,10 @@ def stringRotation(s1, s2):
     l = 0
     r = len(s1)-1
     while l < r:
-        if self.isSubstring(s1[l:r], s2):
+        if isSubstring(s1[l:r], s2):
             break
         r-=1
-    if self.isSubstring(s1[l:r], s2) and self.isSubstring(s1[r:], s2):
+    if isSubstring(s1[l:r], s2) and isSubstring(s1[r:], s2):
         return True
     return False
 
@@ -43,4 +43,3 @@ if __name__=="__main__":
     s1 = sys.argv[1]
     s2 = sys.argv[2]
     print(stringRotation(s1, s2))
-    # print(isSubstring(s1, s2))
