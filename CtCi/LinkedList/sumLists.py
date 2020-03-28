@@ -1,5 +1,5 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 '''
 Sum Lists: You have two numbers represented by a linked list, where each node contains a single
