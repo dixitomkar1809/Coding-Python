@@ -1,5 +1,5 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 '''
 Intersection: Given two (singly) linked lists, determine if the two lists intersect. Return the intersecting
