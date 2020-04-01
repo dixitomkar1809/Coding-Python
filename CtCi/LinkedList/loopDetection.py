@@ -1,5 +1,5 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 '''
 Loop Detection: Given a circular linked list, implement an algorithm that returns the node at the
