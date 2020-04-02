@@ -1,5 +1,5 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 '''
 Stack of Plates: Imagine a (literal) stack of plates. If the stack gets too high, it might topple.
