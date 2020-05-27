@@ -31,7 +31,7 @@ class Solution:
 
     def getRandomNode(self, root, size):
         leftSize = 0 if not root.left else root.left.size
-        index = random.randint(0, size)
+        index = random.randint(1, size)
         print(size, index, leftSize)
         if index < leftSize:
             return self.getRandomNode(root.left, size)
