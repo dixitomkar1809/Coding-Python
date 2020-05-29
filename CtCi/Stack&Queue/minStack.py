@@ -1,5 +1,5 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 '''
 Stack Min: How would you design a stack which, in addition to push and pop, has a function min
