@@ -23,6 +23,7 @@ class Solution:
         print("Tree Height %d"%(self.height))
         print("Tree Diameter %d"%(self.diameter))
     
+    # Time Complexity = O(n)
     def __levelOrderTraversal(self):
         queue = []
         queue.append([self.root, 0])
@@ -36,6 +37,7 @@ class Solution:
                 queue.append([node.right, level+1])
         return levelOrderTraversal
 
+    # Time Complexity = O(n)
     def __levelOrderHorizontalDistanceTraversal(self):
         queue = []
         queue.append([self.root, 0, 0])
@@ -49,6 +51,7 @@ class Solution:
                 queue.append([node.right, level+1, horizontalDistance + 1])
         return levelOrderHorizontalDistanceTraversal
     
+    # Time Complexity = O(n)
     def leftView(self):
         print("Left View")
         for item in self.levelOrderTraversal.values():
@@ -56,6 +59,7 @@ class Solution:
         print()
         return 
 
+    # Time Complexity = O(n)
     def rightView(self):
         print("Right View")
         for item in self.levelOrderTraversal.values():
@@ -63,6 +67,7 @@ class Solution:
         print()
         return 
 
+    # Time Complexity = O(n)
     def topView(self):
         print("Top View")
         for key in sorted(self.levelOrderHorizontalDistanceTraversal):
@@ -70,6 +75,7 @@ class Solution:
         print()
         return 
 
+    # Time Complexity = O(n)
     def bottomView(self):
         print("Bottom View")
         for key in sorted(self.levelOrderHorizontalDistanceTraversal):
@@ -77,6 +83,7 @@ class Solution:
         print()
         return 
 
+    # Time Complexity = O(n)
     def maxOfLevel(self, levelNumber):
         queue = []
         queue.append([self.root, 0])
@@ -99,6 +106,7 @@ class Solution:
         print(levelOrderTraversal[levelNumber].value)
         return 
 
+    # Time Complexity = O(n)
     def minOfLevel(self, levelNumber):
         queue = []
         queue.append([self.root, 0])
@@ -121,6 +129,7 @@ class Solution:
         print(levelOrderTraversal[levelNumber].value)
         return 
 
+    # Time Complexity = O(n)
     def getHeight(self, node):
         if not node:
             return 0
@@ -129,6 +138,7 @@ class Solution:
     def childrenSumProperty(self):
         pass
 
+    # Time Complexity = O(n)
     def getDiameter(self, node):
         if not node:
             return 0

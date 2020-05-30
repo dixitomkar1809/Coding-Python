@@ -7,6 +7,8 @@ The span Si of the stock’s price on a given day i is defined as the maximum nu
 For example, if an array of 7 days prices is given as {100, 80, 60, 70, 60, 75, 85}, then the span values for corresponding 7 days are {1, 1, 1, 2, 1, 4, 6}
 '''
 
+# Time Complexity = O(n)
+
 class Solution:
     def stockSpan(self, price):
         span = [1] * len(price)

@@ -6,6 +6,8 @@ Write an efficient program for printing k largest elements in an array. Elements
 For example, if given array is [1, 23, 12, 9, 30, 2, 50] and you are asked for the largest 3 elements i.e., k = 3 then your program should print 50, 30 and 23.
 '''
 
+# Time Complexity = O(nLogn)
+
 class MinHeap:
     def __init__(self, capacity):
         self.capacity = capacity
@@ -25,6 +27,7 @@ class MinHeap:
         self.percolateDown(0)
         return x
     
+    # Time Complexity = O(logn)
     def percolateDown(self, i):
         x = self.pq[i]
         c = self.__getFirstChild(i)
@@ -46,6 +49,7 @@ class MinHeap:
         self.size += 1
         return True
 
+    # Time Complexity = O(logn)
     def percolateUp(self, i):
         x = self.pq[i]
         while i > 0 and x < self.pq[self.__getParent(i)]:
