@@ -48,7 +48,7 @@ class MaxHeap:
             c = self.__getFirstChild(i)
         self.pq[i] = x
 
-    def peek(self, i):
+    def peek(self):
         return self.pq[0]
 
 if __name__=="__main__":

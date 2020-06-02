@@ -1,5 +1,5 @@
 
-class MaxHeap:
+class MinHeap:
     def __init__(self, capacity):
         self.capacity = capacity
         self.pq = [float('-inf')] * self.capacity
@@ -46,7 +46,7 @@ class MaxHeap:
             c = self.__getFirstChild(i)
         self.pq[i] = x
 
-    def peek(self, i):
+    def peek(self):
         return self.pq[0]
 
     def printHeap(self):
@@ -55,7 +55,7 @@ class MaxHeap:
 
 
 if __name__=="__main__":
-    heap = MaxHeap(5)
+    heap = MinHeap(5)
     array = [4, 2, 10]
     for i,x in enumerate(array):
         heap.pq[i] = x

@@ -5,6 +5,8 @@
 Given a binary tree. Check whether it is a BST or not.
 '''
 
+# Time Complexity: O(n)
+
 class Node:
     def __init__(self, value):
         self.value = value
