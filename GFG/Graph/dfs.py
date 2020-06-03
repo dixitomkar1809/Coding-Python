@@ -49,6 +49,7 @@ class Graph:
     def getVertexName(self, vertex):
         return vertex.getName()
 
+    # Time Complexity: O(V + E).
     def dfs(self):
         if len(self.getEdges()) == 0:
             return 'Empty Graph'
