@@ -5,6 +5,8 @@
 Given a 2D screen, location of a pixel in the screen ie(x,y) and a color(K), your task is to replace color of the given pixel and all adjacent(excluding diagonally adjacent) same colored pixels with the given color K.
 '''
 
+# Time Complexity: O(m*n)
+
 class Solution:
     def floodFill(self, matrix, i, j, oldColor, newColor):
         if i >= len(matrix) or j >= len(matrix[0]) or i < 0 or j < 0 or matrix[i][j] != oldColor or matrix[i][j] == newColor:
