@@ -6,7 +6,7 @@ Given a sorted array A, size N, of integers; every element appears twice except 
 '''
 #Time Complexity: O(logn)
 class Solution:
-    def findElementInSortedArray(self, arr, l, r):
+    def findElementInSortedRotatedArray(self, arr, l, r):
         if l > r:
             return None
         if l == r:
@@ -27,4 +27,4 @@ class Solution:
 if __name__=='__main__':
     arr = [1,1,4,4,5,5,6]
     sol = Solution()
-    print(sol.findElementInSortedArray(arr, 0, len(arr)-1))
+    print(sol.findElementInSortedRotatedArray(arr, 0, len(arr)-1))
