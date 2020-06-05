@@ -5,6 +5,8 @@
 Given an array C of size N-1 and given that there are numbers from 1 to N with one element missing, the missing number is to be found.
 '''
 
+# Time Complexity: O(n)
+
 class Solution:
     def getMissingNumberInArray(self, arr, n):
         currSum = sum(arr)
