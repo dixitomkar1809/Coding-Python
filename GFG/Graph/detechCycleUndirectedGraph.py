@@ -2,7 +2,7 @@
 # Email: omedxt@gmail.com
 
 '''
-Given a connected undirected graph. Perform a Depth First Traversal of the graph.
+Given a Undirected Graph. Check whether it contains a cycle or not. 
 '''
 
 class Vertex:
@@ -26,6 +26,7 @@ class Graph:
     def addEdge(self, fromVertex, toVertex):
         if not self.directed:
             if fromVertex not in self.edges or toVertex not in self.edges:
+                print('here')
                 return False
             self.edges[fromVertex].append(toVertex)
             self.edges[toVertex].append(fromVertex)
@@ -50,25 +51,27 @@ class Graph:
         return vertex.getName()
 
     # Time Complexity: O(V + E).
-    def dfs(self):
+    def hasCycle(self):
         if len(self.getEdges()) == 0:
             return 'Empty Graph'
         visited = {}
-        stack = []
         for u in self.getEdges():
             visited[u] = False
         for u in self.getEdges():
             if not visited[u]:
-                self.dfsHelper(u, visited, stack)
-        return stack
+                if self.hasCycleHelper(u, visited, None):
+                    return True
+        return False
     
-    def dfsHelper(self, u, visited, stack):
+    def hasCycleHelper(self, u, visited, parent):
         visited[u] = True
-        stack.append(u.name)
         for v in self.getToVertices(u):
             if not visited[v]:
-                self.dfsHelper(v, visited, stack)
-        return
+                if self.hasCycleHelper(v, visited, u):
+                    return True
+            elif parent != v:
+                return True
+        return False
 
 if __name__=="__main__":
     graph = Graph(False)
@@ -81,5 +84,6 @@ if __name__=="__main__":
     graph.addEdge(zero, two)
     graph.addEdge(zero, three)
     graph.addEdge(zero, four)
-    print(graph.dfs())
+    graph.addEdge(four, three)
+    print(graph.hasCycle())
 
