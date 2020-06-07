@@ -2,7 +2,7 @@
 # Email: omedxt@gmail.com
 
 '''
-Median of stream
+Given 2 sorted arrays A and B of size N each. Print sum of middle elements of the array obtained after merging the given arrays.
 '''
 
 class MinHeap:
@@ -110,40 +110,25 @@ class MaxHeap:
         return self.pq[0]
 
 class Solution:
-    def getMedian(self, arr):
-        leftSide = MaxHeap(len(arr))
-        rightSide = MinHeap(len(arr))
-        median = [arr[0]]
-        leftSide.add(arr[0])
-        for i in range(1, len(arr)):
-            x = arr[i]
-            if leftSide.size == rightSide.size:
-                if x < median[-1]:
-                    leftSide.add(x)
-                    median.append(leftSide.peek())
-                else:
-                    rightSide.add(x)
-                    median.append(rightSide.peek())
-            elif leftSide.size < rightSide.size:
-                if x < median[-1]:
-                    leftSide.add(x)
-                else:
-                    leftSide.add(rightSide.remove())
-                    rightSide.add(x)
-                median.append((leftSide.peek() + rightSide.peek()) / 2)
+    def getSumOfMiddleElements(self, arr1, arr2, n):
+        i, j = 0, 0
+        k = n
+        while k:
+            if arr1[i] == arr2[j]:
+                i+=1
+                j+=1
+                k-=1
+                k-=1
+            elif arr1[i] < arr2[j]:
+                i+=1
+                k-=1
             else:
-                if x < median[-1]:
-                    rightSide.add(leftSide.remove())
-                    leftSide.add(x)
-                else:
-                    rightSide.add(x)
-                median.append((rightSide.peek() + leftSide.peek()) / 2)
-        print(arr)
-        print(median)
-        return median
+                j+=1
+                k-=1
+        return arr1[i] + arr2[j]
 
-if __name__=="__main__":
-    arr = [5, 15, 10, 20, 3]
+if __name__=='__main__':
+    arr1 = [1, 2, 4, 6, 10]
+    arr2 = [4, 5, 6, 9, 12]
     sol = Solution()
-    sol.getMedian(arr)
-                
+    print(sol.getSumOfMiddleElements(arr1, arr2, len(arr1)-1))
