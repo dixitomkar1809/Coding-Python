@@ -5,6 +5,8 @@
 Given an array of integers. Complete the partition() function used for the implementation of Quick Sort.
 '''
 
+# Time Complexity: O(nlogn)
+
 class Solution:
     def quickSort(self, arr):
         self._quickSort(arr, 0, len(arr)-1)
