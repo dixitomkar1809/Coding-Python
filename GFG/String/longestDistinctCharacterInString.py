@@ -2,7 +2,10 @@
 # Email: omedxt@gmail.com
 
 '''
+Given a string S, find length of the longest substring with all distinct characters.  For example, for input "abca", the output is 3 as "abc" is the longest substring with all distinct characters.
 '''
+
+# Time Complexity: O(n)
 
 class Solution:
     def longestDistinctCharacterInString(self, string):
