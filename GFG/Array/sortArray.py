@@ -5,6 +5,8 @@
 Given an array A of size N containing 0s, 1s, and 2s; you need to sort the array in ascending order.
 '''
 
+# Time Complexity: O(n)
+
 from collections import Counter
 
 class Solution:
