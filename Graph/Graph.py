@@ -121,9 +121,14 @@ class Graph:
     def __dfsVisit(self, u, stack):
         u.setSeen(True)
         stack.append(u)
-        for v, w in self.getToVertices(u):
-            if not v.getSeen():
-                self.__dfsVisit(v, stack)
+        if self.weighted:
+            for v, w in self.getToVertices(u):
+                if not v.getSeen():
+                    self.__dfsVisit(v, stack)
+        else:
+            for v in self.getToVertices(u):
+                if not v.getSeen():
+                    self.__dfsVisit(v, stack)
         return
 
     # Performs Breadth First Search
