@@ -8,8 +8,10 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
+        self.visited = False
 
 class Solution:
+    # Time Complexity: O(m+n)
     def getIntersection(self, head1, head2):
         curr1 = head1
         curr2 = head2
@@ -23,6 +25,19 @@ class Solution:
             else:
                 curr1 = curr1.next
                 curr2 = curr2.next
+    
+    # Time Complexity: O(m*n)
+    def getIntersection2(self, head1, head2):
+        curr1 = head1
+        curr2 = head2
+        while curr1:
+            curr1.visited = True
+            curr1 = curr1.next
+        while curr2:
+            if curr2.visited:
+                return curr2.value
+            curr2 = curr2.next
+        return None   
 
 if __name__=='__main__':
     three = Node(3)
@@ -37,4 +52,4 @@ if __name__=='__main__':
     fifteen.next = thirty
     ten.next = fifteen
     sol = Solution()
-    print(sol.getIntersection(three, ten))
+    print(sol.getIntersection2(three, ten))
