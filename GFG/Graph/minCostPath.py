@@ -5,6 +5,8 @@
 Given a square grid of size N, each cell of which contains integer cost which represents a cost to traverse through that cell, we need to find a path from top left cell to bottom right cell by which total cost incurred is minimum. You can move in 4 directions : up, down, left an right.
 '''
 
+# Time Complexity: O(R*C)
+
 class Solution:
     def minCostPath(self, matrix):
         R = len(matrix)
