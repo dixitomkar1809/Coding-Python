@@ -1,14 +1,16 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 #  Rod Cutting
+
+# Time Complexity: O(n^2)
 
 import sys
 
 def rodCutting(n, prices):
     R = [0] * (n+1)
     for k in range(1, n+1):
-        q = 0
+        q = float('-inf')
         for i in range(k):
             q = max(q, prices[i]+R[k-i-1])
         R[k] = q
@@ -16,11 +18,5 @@ def rodCutting(n, prices):
 
 
 if __name__=="__main__":
-    if len(sys.argv)==1:
-        print("Input Not detected")
-    else:
-        prices = []
-        for price in sys.argv[1:]:
-            prices.append(int(price))
-        # rate = [1.0, 2.5, 2.6, 2.5, 2.6, 2.8, 2.4, 2.5, 2.6, 2.6]
-        print(rodCutting(len(prices), prices))
+    prices = [0,1,5,8,9,10,17,17,20,24,30]
+    print(rodCutting(len(prices), prices))
