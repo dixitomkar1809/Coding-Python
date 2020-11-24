@@ -15,30 +15,9 @@ class SortedStack:
     
     def push(self, element):
         if not self.isFull():
-            if self.isEmpty():
-                self.stack[0] = element
-                self.size += 1
-                return True
-            else:
-                tempStack = self.stack[:]
-                index = 0
-                for item in tempStack:
-                    if item > element:
-                        self.stack[index] = element
-                        self.stack[index+1:] = tempStack[index:-1]
-                        self.size += 1
-                        return True
-                    else:
-                        if item == float('-inf'):
-                            self.stack[index] = element
-                            index += 1
-                            self.size += 1
-                            return True
-                        self.stack[index] = item 
-                        index += 1
-                self.stack[index-1] = element
-                self.size += 1
-                return True
+            self.stack[self.size] = element
+            self.size += 1
+            return True
         print('Stack Full!')
         return False
     
@@ -52,7 +31,7 @@ class SortedStack:
 
     def peek(self):
         if not self.isEmpty():
-            return self.stack[0]
+            return self.stack[self.size-1]
         return None
         
     def isEmpty(self):
@@ -63,6 +42,16 @@ class SortedStack:
 
     def printStack(self):
         print(self.stack[:self.size])
+    
+def sortStackFunc(originalStack):
+    tempStack = SortedStack(5)
+    while not originalStack.isEmpty():
+        currData = originalStack.pop()
+        while not tempStack.isEmpty() and tempStack.peek() > currData:
+            originalStack.push(tempStack.pop())
+        tempStack.push(currData)
+    while not tempStack.isEmpty():
+        originalStack.push(tempStack.pop())
 
 if __name__=="__main__":
     sortStack = SortedStack(5)
@@ -71,8 +60,11 @@ if __name__=="__main__":
     sortStack.push(4)
     sortStack.push(2)
     sortStack.push(5)
+    sortStackFunc(sortStack)
+    sortStack.printStack()
     sortStack.pop()
+    sortStackFunc(sortStack)
     sortStack.printStack()
     sortStack.push(6)
+    sortStackFunc(sortStack)
     sortStack.printStack()
-    print(sortStack.stack)
