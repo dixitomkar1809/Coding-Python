@@ -2,13 +2,12 @@
 # Email: omedxt@gmail.com
 
 '''
-BST Sequences: A binary search tree was created by traversing through an array from left to right
-and inserting each element. Given a binary search tree with distinct elements, print all possible
-arrays that could have led to this tree.
-EXAMPLE
-Input:
-Outp
+Triple Step: A child is running up a staircase with n steps and can hop either 1 step, 2 steps, or 3
+steps at a time. Implement a method to count how many possible ways the child can run up the
+stairs.
 '''
+
+# Time Complexity: O(n)
 
 def solution(n):
     memo = [-1] * (n + 2)
