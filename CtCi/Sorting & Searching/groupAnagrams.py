@@ -2,8 +2,8 @@
 # Email: omedxt@gmail.com
 
 '''
-Sorted Merge: You are given two sorted arrays, A and B, where A has a large enough buffer at the
-end to hold B. Write a method to merge B into A in sorted order.
+Group Anagrams: Write a method to sort an array ot strings so that all tne anagrnms are next to
+each other.
 '''
 
 # Time Complexity: O(n * m) n -> number of items, m -> number of chars in word
