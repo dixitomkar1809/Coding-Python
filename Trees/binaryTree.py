@@ -7,6 +7,8 @@ class Node:
         self.left = None
         self.right = None
         self.parent = None
+        self.leftSum = 0
+        self.rightSum = 0
 
     def addLeft(self, child):
         self.left = child
@@ -46,6 +48,22 @@ class BinaryTree:
             height = 1 + max(lh, rh)
             print(node.value, depth, height)
             return height
+    
+    def getDiameter(self, root):
+        if not root:
+            return 0
+        lh = self.getHeight(root.left)
+        rh = self.getHeight(root.right)
+        ld = self.getDiameter(root.left)
+        rd = self.getDiameter(root.right)
+        return max(1 + lh + rh, max(ld, rd))
+    
+    def getSum(self, root):
+        if not root:
+            return 0
+        root.leftSum = self.getSum(root.left)
+        root.rightSum = self.getSum(root.right)
+        return root.value + root.leftSum + root.rightSum
 
 if __name__=="__main__":
     root = Node('A')

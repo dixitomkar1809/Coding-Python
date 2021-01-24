@@ -12,6 +12,8 @@ class TreeNode:
         self.value = value
         self.left = None
         self.right = None
+        self.leftSum = 0
+        self.rightSum = 0
 
 class Solution:
     def __init__(self, root):
@@ -134,9 +136,20 @@ class Solution:
         if not node:
             return 0
         return 1 + max(self.getHeight(node.left), self.getHeight(node.right))
+    
+    def childrenSumProperty(self, root):
+        print("Children Sum Property")
+        self._childrenSumPropertyHelper(root)
+        print("Root Left Sum: ", root.leftSum)
+        print("Root Right Sum: ", root.rightSum)
+        return
 
-    def childrenSumProperty(self):
-        pass
+    def _childrenSumPropertyHelper(self, root):
+        if not root:
+            return 0
+        root.leftSum = self._childrenSumPropertyHelper(root.left)
+        root.rightSum = self._childrenSumPropertyHelper(root.right)
+        return root.value + root.leftSum + root.rightSum
 
     # Time Complexity = O(n)
     def getDiameter(self, node):
@@ -170,3 +183,4 @@ if __name__=="__main__":
     sol.bottomView()
     sol.maxOfLevel(2)
     sol.minOfLevel(1)
+    sol.childrenSumProperty(one)
