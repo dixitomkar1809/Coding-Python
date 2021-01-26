@@ -5,6 +5,8 @@
 Given a Binary Search Tree (with all values unique) and two node values. Find the Lowest Common Ancestors of the two nodes in the BST.
 '''
 
+# Time Complexity: O(n)
+
 class Node:
     def __init__(self, value):
         self.data = value
