@@ -5,6 +5,8 @@
 
 # Time Complexity: O(n)
 
+import collections
+
 class Solution(object):
     def numPairsDivisibleBy60(self, time):
         """

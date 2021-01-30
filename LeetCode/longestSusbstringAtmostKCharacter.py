@@ -3,6 +3,8 @@
 
 # Link: https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/
 
+import collections
+
 class Solution(object):
     def lengthOfLongestSubstringKDistinct(self, s, k):
         """
