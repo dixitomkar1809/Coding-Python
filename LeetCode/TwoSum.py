@@ -3,18 +3,11 @@
 
 # Link to problem: https://leetcode.com/problems/two-sum/
 
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        if not nums:
-            return []
-        seen = {}
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap = {}
         for i, num in enumerate(nums):
-            if target - num in seen:
-                return [seen[target-num], i]
-            else:
-                seen[num] = i
+            if target - num in hashmap:
+                return [hashmap[target-num], i]
+            hashmap[num] = i
+        return None
