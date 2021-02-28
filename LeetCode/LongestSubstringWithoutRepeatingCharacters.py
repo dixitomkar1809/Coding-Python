@@ -3,6 +3,8 @@
 
 # Link to Problem: https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
+# Time Complexity: O(n) n is number of chars in string
+
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
