@@ -3,6 +3,8 @@
 
 # Link to the problem: https://leetcode.com/problems/boundary-of-binary-tree/
 
+# Time Complexity: O(n) n is number of nodes
+
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
