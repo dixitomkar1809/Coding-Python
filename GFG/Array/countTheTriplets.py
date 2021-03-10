@@ -26,3 +26,29 @@ Output:
 2
 -1
 '''
+
+# Time Complexity: O(n ^ 2) n is number of elements in array
+
+import collections
+
+class Solution:
+    def solution(self, arr):
+        hashmap = collections.defaultdict(int)
+        sol = collections.defaultdict()
+        for item in arr:
+            hashmap[item] = 0
+        for item in arr:
+            for secondItem in hashmap:
+                if item != secondItem:
+                    if (item + secondItem) in hashmap:
+                        if item < secondItem:
+                            sol[(item, secondItem)] = 0
+                        else:
+                            sol[(secondItem, item)] = 0
+        return len(sol.keys())
+    
+if __name__ == '__main__':
+    solution = Solution()
+    print(solution.solution([1,5,3,2]))
+    print(solution.solution([2,3,4]))
+            

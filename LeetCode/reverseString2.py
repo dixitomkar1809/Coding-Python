@@ -15,12 +15,18 @@ class Solution(object):
         :type k: int
         :rtype: str
         """
-        i = 0
-        while i < len(s):
-            if (i + k) < len(s):
-                s = s[:i] + s[i:i+k][::-1] + s[i+k:]
+        s= list(s)
+        for i in range(0, len(s), 2 * k):
+            if (i + k < len(s)):
+                s = self.reverseStringHelper(s, i, (i+k-1))
             else:
-                s = s[:i] + s[i:][::-1]
-            i += (2 * k)
-        return s 
-        
+                s = self.reverseStringHelper(s, i, (len(s)-1))
+        s = ''.join(s)
+        return s
+                
+    def reverseStringHelper(self, s, i, j):
+        while i < j:
+            s[i], s[j] = s[j], s[i]
+            i+=1
+            j-=1
+        return s

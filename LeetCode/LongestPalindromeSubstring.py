@@ -3,6 +3,8 @@
 
 # Link to Problem: https://leetcode.com/problems/longest-palindromic-substring/
 
+# Time Complexity: O(n ^ 2)
+
 class Solution:
     def longestPalindrome(self, s):
         """
