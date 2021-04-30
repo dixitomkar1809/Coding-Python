@@ -1,16 +1,22 @@
 # Author: Omkar Dixit
 # Email: omedxt@gmail.com
 
-'''
-Serialization is to store a tree in an array so that it can be later restored and Deserialization is reading tree back from the array. Now your task is to complete the function serialize which stores the tree into an array A[ ] and deSerialize which deserializes the array to tree and returns it.
-'''
+# Link: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
 
-class Node:
-    def __init__(self, data): 
-        self.data = data 
-        self.left = self.right = None
+# Time Complexity: O(n) n is number of nodes
 
-class Solution:
+import collections
+import heapq
+
+# Definition for a binary tree node.
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+class Codec:
+
     def serialize(self, root):
         """Encodes a tree to a single string.
         
@@ -35,7 +41,7 @@ class Solution:
         """Decodes your encoded data to tree.
         
         :type data: str
-        :rtype: Node
+        :rtype: TreeNode
         """
         if not data:
             return None
@@ -46,17 +52,13 @@ class Solution:
         if data[0] == 'None':
             data.pop(0)
             return None
-        root = Node(data.pop(0))
+        root = TreeNode(data.pop(0))
         root.left = self.deserializeHelper(data)
         root.right = self.deserializeHelper(data)
         return root
+        
 
-if __name__=='__main__':
-    sol = Solution()
-    root = Node(1) 
-    root.left = Node(2) 
-    root.right = Node(3) 
-    root.right.left = Node(4)
-    root.right.right = Node(5)
-    arr = sol.serialize(root)
-    newRoot = sol.deserialize(arr)
+# Your Codec object will be instantiated and called as such:
+# ser = Codec()
+# deser = Codec()
+# ans = deser.deserialize(ser.serialize(root))

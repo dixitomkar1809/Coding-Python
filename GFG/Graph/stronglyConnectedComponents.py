@@ -106,7 +106,7 @@ class Graph:
 
     def transposeGraph(self):
         edges = {}
-        for vertex in self.getEdges():
+        for vertex in self.getVertices():
             edges[vertex] = []
         for fromVertex in self.getEdges():
             for toVertex, weight in self.edges[fromVertex]:
@@ -116,7 +116,7 @@ class Graph:
                 else:
                     edges[toVertex].append([fromVertex, weight])
         self.edges = edges
-
+        
     # Performs Depth First Search
     # Returns a list of vertices in the way they were traversed
     def depthFirstSearch(self):
@@ -136,7 +136,7 @@ class Graph:
         u.setSeen(True)
         stack.append(u)
         if self.weighted:
-            for v, w in self.getToVertices(u):
+            for v, _ in self.getToVertices(u):
                 if not v.getSeen():
                     self.__dfsVisit(v, stack)
         else:
@@ -148,7 +148,7 @@ class Graph:
     def dfsForSCC(self):
         for u in self.getEdges():
             u.setSeen(False)
-        for u in self.getEdges():
+        for u in self.getVertices():
             if not u.getSeen():
                 self.dfsForSCCUtil(u)
     
@@ -158,11 +158,25 @@ class Graph:
             if not v.getSeen():
                 self.dfsForSCCUtil(v)
         self.stack.append(u)
-
+        
+    def depthFirstSearchStack(self):
+        if len(self.getEdges()) == 0:
+            return "Empty Graph"
+        stack = []
+        for u in self.getVertices():
+            u.setSeen(False)
+        self.components = 0
+        while self.stack:
+            u = self.stack.pop()
+            if not u.getSeen():
+                self.components+=1
+                self.__dfsVisit(u, stack)
+        return stack
+    
     def getStronglyConnectedComponents(self):
         self.dfsForSCC()
         self.transposeGraph()
-        self.depthFirstSearch()
+        self.depthFirstSearchStack()
         print(self.components)
     
 

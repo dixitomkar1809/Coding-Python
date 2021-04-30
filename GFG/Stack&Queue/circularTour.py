@@ -26,6 +26,6 @@ class Solution:
         return start
 
 if __name__=='__main__':
-    arr = [PetrolPump(6,4), PetrolPump(3,6), PetrolPump(7,3)] 
+    arr = [PetrolPump(4, 6), PetrolPump(6, 5), PetrolPump(7,3), PetrolPump(4, 5)] 
     sol = Solution()
     print(sol.printTour(arr))
