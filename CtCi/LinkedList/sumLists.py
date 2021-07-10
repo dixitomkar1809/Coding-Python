@@ -15,6 +15,8 @@ lnput:(6 -> 1 -> 7) + (2 -> 9 -> 5).That is,617 + 295.
 Output: 9 - > 1 -> 2. That is, 912.
 '''
 
+# Time Complexity: O(n) n is the number of nodes in the longest list
+
 import sys
 
 class Node:

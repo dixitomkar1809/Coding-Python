@@ -12,6 +12,8 @@ Input: A -> B -> C - > D -> E -> C [the same C as earlier]
 Output: C
 '''
 
+# Time Complexity: O(n) for n being the number of nodes
+
 import sys
 
 class Node:

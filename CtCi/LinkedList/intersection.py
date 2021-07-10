@@ -8,6 +8,8 @@ node of the first linked list is the exact same node (by reference) as the jth n
 linked list, then they are intersecting.
 '''
 
+# Time Complexity: O(n1 + n2) for n1 being the number of nodes in l1 and n2 is number of nodes in l2 
+
 import sys
 
 class Node:

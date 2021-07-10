@@ -14,7 +14,7 @@ class Solution():
         for i in range(1, len(arr)):
             next = arr[i]
             if stack:
-                j = stack.pop();
+                j = stack.pop()
                 element = arr[j]
                 while next > element:
                     s[j] = next

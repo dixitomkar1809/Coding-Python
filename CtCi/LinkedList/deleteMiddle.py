@@ -10,6 +10,8 @@ lnput:the node c from the linked lista->b->c->d->e->f
 Result: nothing is returned, but the new linked list looks like a->b->d->e- >f
 '''
 
+# Time Complexity: O(1)
+
 import sys
 
 class Node:
@@ -17,7 +19,7 @@ class Node:
         self.val = val
         self.next = None
     
-def deleteMiddle(head, node):
+def deleteMiddle(node):
     if (not node or not node.next):
         return False
     nextNode = node.next
@@ -40,8 +42,4 @@ if __name__=="__main__":
     five.next=six
     six.next=seven
     seven.next=eight
-    deleteMiddle(one, four)
-    head = one
-    while head:
-        print(head.val)
-        head = head.next
+    deleteMiddle(six)

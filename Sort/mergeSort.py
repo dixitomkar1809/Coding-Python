@@ -7,6 +7,7 @@ import sys
 
 # Time Complexity O(nlogn)
 # Space Complexity O(n)
+
 def mergeSort1(arr, l, r):
     if l < r:
         m = int((l+r)/2)

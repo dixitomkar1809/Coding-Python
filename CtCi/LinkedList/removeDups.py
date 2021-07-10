@@ -1,11 +1,13 @@
 # Author: Omkar Dixit
-# Email: ond170030@utdallas.edu
+# Email: omedxt@gmail.com
 
 '''
 R􀂧mov􀂧 Dups! Write code to remove duplicates from an unsorted linked list.
 FOLLOW UP
 How would you solve this problem if a temporary buffer is not allowed?
 '''
+
+# Time Complexity: O(n) for n being the number of nodes
 
 import sys
 

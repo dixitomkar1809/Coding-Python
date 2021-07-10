@@ -5,6 +5,8 @@
 Palindrome: Implement a function to check if a linked list is a palindrome.
 '''
 
+# Time Complexity: O(n) for n being the number of nodes
+
 import sys
 
 class Node:
